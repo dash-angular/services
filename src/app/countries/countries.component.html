@@ -1,0 +1,19 @@
+<h1>Countries Info</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>capital</th>
+            <th>languages</th>
+            <th>flags</th>   
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of data" >
+            <td>{{c.name.common}}</td>
+            <td> <div *ngIf="c.capital">{{c.capital[0]}}</div> </td>
+            <td> <div *ngFor="let item of c.languages | keyvalue">{{item.value}}</div> </td>
+            <td> <img [src]="c.flags.png" height="50" width="80" alt="" srcset=""></td>
+        </tr>
+    </tbody>
+</table>
